@@ -56,7 +56,7 @@ function App() {
             Join us in building tools and organizing efforts to support those in need.
           </p>
           <div className="flex flex-wrap justify-center gap-4 mb-12">
-            {(['developer', 'designer', 'activist', 'AI Engineer', 'Artist', 'Doctor'] as Role[]).map((role) => (
+            {(['developer', 'designer', 'activist'] as Role[]).map((role) => (
               <button
                 key={role}
                 onClick={() => setSelectedRole(role)}
