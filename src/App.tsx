@@ -53,10 +53,10 @@ function App() {
             Code. Design. Organize. Rescue.
           </p>
           <p className="text-lg md:text-xl mb-12 text-gray-600 dark:text-gray-400">
-            And any other tracks we need everyone
+            Join us in building tools and organizing efforts to support those in need.
           </p>
           <div className="flex flex-wrap justify-center gap-4 mb-12">
-            {(['developer', 'designer', 'activist'] as Role[]).map((role) => (
+            {(['developer', 'designer', 'activist', 'AI Engineer', 'Artist', 'Doctor'] as Role[]).map((role) => (
               <button
                 key={role}
                 onClick={() => setSelectedRole(role)}
