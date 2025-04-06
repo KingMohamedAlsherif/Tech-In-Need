@@ -147,6 +147,11 @@ function App() {
                 <option value="dev">Development</option>
                 <option value="design">Design</option>
                 <option value="organize">Organization</option>
+                <option value="document">Documentation</option>
+                <option value="ai">AI Engineering</option>
+                <option value="art">Art</option>
+                <option value="medical">Medical</option>
+                <option value="other">Other</option>
               </select>
               <button
                 type="submit"
