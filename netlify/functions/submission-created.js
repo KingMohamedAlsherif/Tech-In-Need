@@ -1,11 +1,11 @@
-const fetch = require('node-fetch');
+import fetch from 'node-fetch';
 
-exports.handler = async (event) => {
+export async function handler(event) {
   const payload = JSON.parse(event.body);
   const { email, skills } = payload.data;
 
-  const AIRTABLE_API_KEY = process.env.AIRTABLE_API_KEY; // From Netlify env vars
-  const AIRTABLE_BASE_ID = process.env.AIRTABLE_BASE_ID; // From Netlify env vars
+  const AIRTABLE_API_KEY = process.env.AIRTABLE_API_KEY;
+  const AIRTABLE_BASE_ID = process.env.AIRTABLE_BASE_ID;
   const AIRTABLE_TABLE_NAME = 'Submissions';
 
   const body = {
@@ -44,4 +44,4 @@ exports.handler = async (event) => {
       body: JSON.stringify({ error: error.message }),
     };
   }
-};
+}
