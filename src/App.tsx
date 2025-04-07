@@ -6,8 +6,37 @@ type Role = 'developer' | 'designer' | 'activist';
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [selectedRole, setSelectedRole] = useState<Role | null>(null);
+  const [email, setEmail] = useState('');
+  const [skills, setSkills] = useState('');
 
   const toggleDarkMode = () => setIsDarkMode(!isDarkMode);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    const formData = new FormData();
+    formData.append('form-name', 'join-team');
+    formData.append('email', email);
+    formData.append('skills', skills);
+
+    try {
+      const response = await fetch('/', {
+        method: 'POST',
+        body: formData,
+      });
+
+      if (response.ok) {
+        alert('Successfully joined the movement!');
+        setEmail('');
+        setSkills('');
+      } else {
+        alert('Something went wrong. Please try again.');
+      }
+    } catch (error) {
+      console.error('Submission error:', error);
+      alert('Submission failed. Check the console for details.');
+    }
+  };
 
   return (
     <div className={`min-h-screen ${isDarkMode ? 'dark bg-gray-900' : 'bg-white'}`}>
@@ -136,13 +165,26 @@ function App() {
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl font-bold mb-8 text-center dark:text-white">Join Our Team</h2>
           <div className="max-w-xl mx-auto">
-            <form className="space-y-4">
+            <form className="space-y-4" onSubmit={handleSubmit}>
+              <input
+                type="hidden"
+                name="form-name"
+                value="join-team"
+              />
               <input
                 type="email"
                 placeholder="Your Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 className="w-full px-4 py-2 rounded-lg border dark:bg-gray-800 dark:border-gray-700 dark:text-white"
+                required
               />
-              <select className="w-full px-4 py-2 rounded-lg border dark:bg-gray-800 dark:border-gray-700 dark:text-white">
+              <select
+                value={skills}
+                onChange={(e) => setSkills(e.target.value)}
+                className="w-full px-4 py-2 rounded-lg border dark:bg-gray-800 dark:border-gray-700 dark:text-white"
+                required
+              >
                 <option value="">Select Your Skills</option>
                 <option value="dev">Development</option>
                 <option value="design">Design</option>

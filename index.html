@@ -8,6 +8,21 @@
   </head>
   <body>
     <div id="root"></div>
+    <!-- Hidden form for Netlify detection -->
+    <form name="join-team" method="POST" data-netlify="true" hidden>
+      <input type="hidden" name="form-name" value="join-team" />
+      <input type="email" name="email" />
+      <select name="skills">
+        <option value="dev">Development</option>
+        <option value="design">Design</option>
+        <option value="organize">Organization</option>
+        <option value="document">Documentation</option>
+        <option value="ai">AI Engineering</option>
+        <option value="art">Art</option>
+        <option value="medical">Medical</option>
+        <option value="other">Other</option>
+      </select>
+    </form>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
