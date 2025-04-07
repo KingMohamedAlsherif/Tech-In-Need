@@ -47,7 +47,7 @@ function App() {
             <div className="flex items-center">
               <Heart className="h-8 w-8 text-red-600" />
               <span className="ml-2 text-xl font-bold bg-gradient-to-r from-red-600 via-green-600 to-black bg-clip-text text-transparent">
-                Tech for Gaza
+                Tech In Need
               </span>
             </div>
             <div className="flex items-center gap-4">
@@ -76,7 +76,7 @@ function App() {
       <section className="pt-32 pb-20 px-4 bg-gradient-to-br from-red-500/10 via-green-500/10 to-black/10 dark:from-red-900/20 dark:via-green-900/20 dark:to-black/20">
         <div className="max-w-7xl mx-auto text-center">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-red-600 via-green-600 to-black bg-clip-text text-transparent dark:from-red-500 dark:via-green-500 dark:to-white">
-            Unite to Stop the War
+            Unite to Stop All the Wars
           </h1>
           <p className="text-xl md:text-2xl mb-4 text-gray-700 dark:text-gray-300">
             Code. Design. Organize. Rescue.
@@ -102,20 +102,89 @@ function App() {
         </div>
       </section>
 
-      {/* Crisis Dashboard */}
-      <section className="py-20 px-4 bg-white dark:bg-gray-900">
+      {/* Motivational Section */}
+      <section className="py-20 px-4 bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100 dark:from-blue-900/20 dark:via-purple-900/20 dark:to-pink-900/20">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold mb-8 text-center dark:text-white">Live Crisis Dashboard</h2>
-          <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-6">
-            <div className="aspect-video relative rounded-lg overflow-hidden">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d108989.57861441544!2d34.4026239779004!3d31.44760025!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14fd844104b258b9%3A0xfddcb14b194be8e7!2sGaza!5e0!3m2!1sen!2s!4v1709840444230!5m2!1sen!2s"
-                className="absolute inset-0 w-full h-full"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              ></iframe>
+          <h2 className="text-3xl font-bold mb-8 text-center dark:text-white">
+            Imagine What We Can Achieve Together
+          </h2>
+          <div className="max-w-3xl mx-auto text-center">
+            <p className="text-xl md:text-2xl mb-8 text-gray-700 dark:text-gray-300">
+              Your unique skills can transform lives. Here are just a few ways you can make an impact:
+            </p>
+            
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
+              {[
+                {
+                  title: 'AI-Powered Crisis Analysis',
+                  description: 'Machine learning tools to identify patterns and predict emerging crises',
+                  icon: < Hammer className="h-8 w-8 text-blue-500" />
+                },
+                {
+                  title: 'Decentralized Communication Networks',
+                  description: 'Build resilient communication systems that work even when infrastructure fails',
+                  icon: < Users className="h-8 w-8 text-purple-500" />
+                },
+                {
+                  title: 'Anonymous Support Platforms',
+                  description: 'Safe spaces for mental health support and community connection',
+                  icon: < Heart className="h-8 w-8 text-pink-500" />
+                },
+                {
+                  title: 'Crowdsourced Resource Mapping',
+                  description: 'Real-time maps showing available resources and safe zones',
+                  icon: < MapPin className="h-8 w-8 text-green-500" />
+                },
+                {
+                  title: 'Blockchain Verification Systems',
+                  description: 'Tamper-proof evidence collection for legal accountability',
+                  icon: < BookOpen className="h-8 w-8 text-yellow-500" />
+                },
+                {
+                  title: 'Emergency Response Coordination',
+                  description: 'Apps to connect responders with those in need efficiently',
+                  icon: < Hammer className="h-8 w-8 text-red-500" />
+                },
+                {
+                  title: 'Educational Gamification',
+                  description: 'Interactive learning tools to educate about human rights',
+                  icon: < BookOpen className="h-8 w-8 text-teal-500" />
+                },
+                {
+                  title: 'AI Misinformation Detection',
+                  description: 'Tools to identify and combat propaganda in real-time',
+                  icon: < Hammer className="h-8 w-8 text-indigo-500" />
+                },
+                {
+                  title: 'Sustainable Resource Distribution',
+                  description: 'Optimized systems for delivering aid where it is needed most',
+                  icon: < Users className="h-8 w-8 text-lime-500" />
+                }
+              ].map((item, index) => (
+                <div 
+                  key={index} 
+                  className="bg-white dark:bg-gray-900 rounded-2xl p-6 shadow-lg transition-transform hover:scale-105"
+                >
+                  <div className="mb-4">{item.icon}</div>
+                  <h3 className="text-xl font-bold mb-2 dark:text-white">{item.title}</h3>
+                  <p className="text-gray-600 dark:text-gray-400">{item.description}</p>
+                </div>
+              ))}
+            </div>
+            
+            <div className="mt-16 text-center">
+              <p className="text-2xl md:text-3xl font-bold text-gray-800 dark:text-white mb-4">
+                You Don't Need to Be a Hero to Change the World
+              </p>
+              <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-8">
+                Every small action contributes to the bigger picture. Whether you're a developer, designer, or activist, your unique perspective and skills are exactly what we need. When we combine our strengths, we create something greater than any of us could alone. The world needs your courage, your creativity, and your commitment. Join us today and be part of the solution.
+              </p>
+              <a
+                href="#join"
+                className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 hover:from-blue-700 hover:via-purple-700 hover:to-pink-700 text-white px-8 py-3 rounded-full text-xl font-semibold shadow-lg"
+              >
+                Start Making a Difference
+              </a>
             </div>
           </div>
         </div>
